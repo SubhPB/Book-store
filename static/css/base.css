@@ -1,0 +1,42 @@
+/* /static/css/base.css */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+body {
+    padding: 1vmax;
+}
+
+header {
+    width: 100%;
+    padding: 1vmin;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gainsboro;
+    border-radius: 14px;
+}
+
+.header-btns {
+    display: flex;
+    align-items: center;
+    gap: 2.1vmin
+}
+
+header h1 {
+    color: red;
+    font-size: 1em;
+}
+
+header a {
+    font-size: .8em;
+    color: black;
+    outline: none;
+    text-decoration: none;
+    font-weight: 700;
+}
