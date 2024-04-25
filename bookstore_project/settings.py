@@ -12,6 +12,11 @@ ALLOWED_HOSTS = []
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+THIRD_PARTY_APPS = [
+    'crispy_forms',
+    'crispy_bootstrap5',
+]
+
 EXTERNAL_APPS = [
     'users.apps.UsersConfig', 
     'pages.apps.PagesConfig',
@@ -24,7 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + EXTERNAL_APPS
+] + THIRD_PARTY_APPS + EXTERNAL_APPS
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -60,8 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookstore_project.wsgi.application'
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -87,10 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
