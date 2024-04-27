@@ -18,6 +18,7 @@ THIRD_PARTY_APPS = [
 EXTERNAL_APPS = [
     'users.apps.UsersConfig', 
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig'
 ]
 
 INSTALLED_APPS = [
@@ -44,6 +45,8 @@ AUTHENTICATION_BACKENDS = (
 )
 # this will print the email on terminal
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'byimaan@djangobookstore.com'
 
 # Email Only login
 ACCOUNT_USERNAME_REQUIRED = False
