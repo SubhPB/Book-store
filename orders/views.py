@@ -4,6 +4,7 @@ import stripe
 from typing import Any
 from django.shortcuts import render, HttpResponse
 from django.views.generic.base import TemplateView
+from django.contrib.auth.models import Permission
 from django.conf import settings
 
 stripe.api_key = settings.STRIPE_TEST_SECRET_KEY
@@ -19,12 +20,14 @@ class OrdersPageView(TemplateView):
     
 
 
-def charge(request):
-    if request.method == 'POST':
+def charge(request): 
 
-        print(" ---- Charge ---- ")
-        print(request.POST)
-        print(' ---- End Charge ---- ')
+    permission = Permission.objects.get(codename='special_status')
+    u = request.user
+
+    u.user_permissions.add(permission)
+
+    if request.method == 'POST':
 
         charge = stripe.Charge.create(
             amount=3900,

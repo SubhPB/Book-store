@@ -1,0 +1,17 @@
+#  four main steps -> 1. setup 2. build 3. release 4. run
+
+setup:
+  addons: 
+  -plan: heroku-postgresql
+
+build:
+  docker:
+    web: Dockerfile
+
+release: 
+  image: web
+  command:
+    - python manage.py collectstatic --noinput
+
+run:
+  web: gunicorn bookstore_project.wsgi    
