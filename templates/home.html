@@ -9,17 +9,10 @@
 
     <h1>Homepage!</h1>
 
-    {% if user.is_authenticated %}
-        Hi {{user.email}}!
+    <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+        <input type="text" name="q" placeholder="Search" aria-label="Search" >
+    </form>
 
-        {% else %}
-        <p>You are not logged in</p>
-
-        <!-- <a href="/accounts/login/">Log In</a> the bottom one equals as this -->
-        <a href="{% url 'login' %}">Log In</a>
-        <a href="{% url 'signup' %}">Sign Up</a>
-
-    {% endif %}
 
 {% endblock content %}
 
