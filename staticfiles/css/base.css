@@ -1,5 +1,49 @@
 /* /static/css/base.css */
-h1 {
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+body {
+    padding: 1vmax;
+}
+
+header {
+    width: 100%;
+    padding: 1vmin;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gainsboro;
+    border-radius: 14px;
+}
+
+.header-btns {
+    display: flex;
+    align-items: center;
+    gap: 2.1vmin
+}
+
+header h1 {
     color: red;
-    opacity: 0.5;
+    font-size: 1em;
+}
+
+header a {
+    font-size: .8em;
+    color: black;
+    outline: none;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#submit-btn {
+    border-radius: 20px;
+    padding: 3px 4.5px;
+    outline: none;
+    background-color: rgb(4, 174, 4);
 }
